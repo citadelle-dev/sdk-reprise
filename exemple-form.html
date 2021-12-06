@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Intégration</title>
+</head>
+<body>
+
+<!-- conteuneur du formulaire -->
+<div id="form" style="width:100%;height:400px;">
+    form
+</div>
+
+<!-- inclusion jquery et script formulaire de reprise -->
+<script src="https://reprisevo.citadelle-tools.com/assets/theme/js/jquery.min.js"></script>
+<script src="https://reprisevo.citadelle-tools.com/assets/js/CitadelleFormReprise.js"></script>
+<script type="text/javascript">
+    var instanceForm;
+    $(document).ready(function()
+    {
+        //instanciation de la classe qui so'occupe de tout
+        instanceForm=new CitadelleFormReprise
+        (
+            {
+                _domaine:'reprisevo.citadelle-tools.com',//pour l'instant c'est ici, çà changera peut-être , pas sur
+                _containerId:'form',//id du conteneur
+                _login:'remote@gmail.com',// mail du compte utilisé
+                _apikey:'dcxxsseihdh6766@&sdfdsfdsfaqwAA',// clé api du compte utilisé
+                //_remoteCss:'.....' //tu pourras mettre ici le lien faire ton fichier css pour personnaliser le design
+            }
+        );
+
+        //une fois instanciée, du peux générer un formulaire avec les champs préremplis . La génération du formulaire et son enregistrement fonctionne , mais les champs pré remplis , pas encore .
+
+        instanceForm.call(function(param)
+        {
+            instanceForm.generateFromFields
+            (
+                {
+                    "dossier_client_prenom":"Yvan",
+                    "dossier_client_nom":"Vénumière",
+                    "dossier_client_email":"yvan@gmail.com",
+                    "dossier_client_phone":098767890,
+                    "dossier_immat":"op234uh",
+                    "dossier_marque_vehicule":"Chevrolet",
+                    "dossier_model_vehicule":"Spark"
+                }
+            );
+        });
+
+
+    });
+
+    // fne pas prendre en  compte pour l'instant
+    function dossierOk(key)
+    {
+        alert(key);
+    }
+</script>
+
+</body>
+</html>
