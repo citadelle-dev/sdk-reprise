@@ -26,15 +26,15 @@
         instanceForm=new CitadelleFormReprise
         (
             {
-                _domaine:'reprisevo.citadelle-tools.com',//pour l'instant c'est ici, çà changera peut-être , pas sur
+                _domaine:'https://reprisevo.citadelle-tools.com',//pour l'instant c'est ici, çà changera peut-être , pas sur
                 _containerId:'form',//id du conteneur
                 _login:'remote@gmail.com',// mail du compte utilisé
                 _apikey:'dcxxsseihdh6766@&sdfdsfdsfaqwAA',// clé api du compte utilisé
-                //_remoteCss:'.....' //tu pourras mettre ici le lien faire ton fichier css pour personnaliser le design
+                //_remoteCss:'http://reprisevo:8888/assets/css/wow.css' //tu peux mettre ici le lien de ton fichier css
             }
         );
 
-        //une fois instanciée, du peux générer un formulaire avec les champs préremplis . La génération du formulaire et son enregistrement fonctionne , mais les champs pré remplis , pas encore .
+        //une fois instanciée, du peux générer un formulaire avec les champs préremplis
 
         instanceForm.call(function(param)
         {
@@ -44,10 +44,11 @@
                     "dossier_client_prenom":"Yvan",
                     "dossier_client_nom":"Vénumière",
                     "dossier_client_email":"yvan@gmail.com",
-                    "dossier_client_phone":098767890,
+                    "dossier_client_phone":3333333333,
                     "dossier_immat":"op234uh",
-                    "dossier_marque_vehicule":"Chevrolet",
-                    "dossier_model_vehicule":"Spark"
+                    "dossier_marque_vehicule":"Renault",
+                    "dossier_model_vehicule":"Capture",
+                    "redirection_finale":"https://reprisevo.citadelle-tools.com"
                 }
             );
         });
@@ -55,11 +56,7 @@
 
     });
 
-    // fne pas prendre en  compte pour l'instant
-    function dossierOk(key)
-    {
-        alert(key);
-    }
+    
 </script>
 
 </body>
