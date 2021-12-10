@@ -26,11 +26,11 @@
         instanceForm=new CitadelleFormReprise
         (
             {
-                _domaine:'https://reprisevo.citadelle-tools.com',//pour l'instant c'est ici, çà changera peut-être , pas sur
+                _domaine:'https://reprisevo.citadelle-tools.com',//url de base pour déterminer l'environnement de travail
                 _containerId:'form',//id du conteneur
                 _login:'remote@gmail.com',// mail du compte utilisé
                 _apikey:'dcxxsseihdh6766@&sdfdsfdsfaqwAA',// clé api du compte utilisé
-                //_remoteCss:'http://reprisevo:8888/assets/css/wow.css' //tu peux mettre ici le lien de ton fichier css
+                //_remoteCss:'http://reprisevo:8888/assets/css/wow.css' //lien de fichier css personnalisé
             }
         );
 
@@ -48,7 +48,8 @@
                     "dossier_immat":"op234uh",
                     "dossier_marque_vehicule":"Renault",
                     "dossier_model_vehicule":"Capture",
-                    "redirection_finale":"https://reprisevo.citadelle-tools.com"
+                    "departement":971,
+                    //"redirection_finale":"http://www.xxxxx.com"//url de redirection après traitement final du formulaire, doit être sur le même domaine que le domaine de la page qui contient l'iframe
                 }
             );
         });
