@@ -17,42 +17,66 @@
 
 <!-- inclusion jquery et script formulaire de reprise -->
 <script src="https://reprisevo.citadelle-tools.com/assets/theme/js/jquery.min.js"></script>
-<script src="https://reprisevo.citadelle-tools.com/assets/js/CitadelleFormReprise.js"></script>
+<script src="https://reprisevo-citadelle-tools.com/assets/js/CitadelleFormReprise.js"></script>
 <script type="text/javascript">
     var instanceForm;
+    //var domaine="http://reprisevo:8888/app_dev.php";
+    var domaine="https://reprisevo-citadelle-tools.com";
     $(document).ready(function()
     {
         //instanciation de la classe qui so'occupe de tout
         instanceForm=new CitadelleFormReprise
         (
             {
-                _domaine:'https://reprisevo.citadelle-tools.com',//url de base pour déterminer l'environnement de travail
+                _domaine:domaine,//url de base pour déterminer l'environnement de travail
                 _containerId:'form',//id du conteneur
-                _login:'adresseemail@user.com',// mail du compte utilisé
-                _apikey:'dcxxsseihdh6766@&sdfdsfdsfaqwAA',// clé api du compte utilisé ( fournie lors de la création de compte )
+                _login:'remote@gmail.com',// mail du compte utilisé
+                _apikey:'dcxxsseihdh6766@&sdfdsfdsfaqwAA',// clé api du compte utilisé
                 //_remoteCss:'http://reprisevo:8888/assets/css/wow.css' //lien de fichier css personnalisé
             }
         );
 
-        //une fois instanciée, du peux générer un formulaire avec les champs préremplis
+        //une fois instanciée, il est possible de générer un formulaire avec les champs préremplis
 
-        instanceForm.call(function(param)
+        instanceForm.call(function()
         {
             instanceForm.generateFromFields
             (
                 {
-                    "dossier_client_prenom":"Prénom",
-                    "dossier_client_nom":"Nom",
-                    "dossier_client_email":"mail@gmail.com",
+                    "dossier_client_prenom":"Yvan",
+                    "dossier_client_nom":"Vénumière",
+                    "dossier_client_email":"yvan@gmail.com",
                     "dossier_client_phone":3333333333,
                     "dossier_immat":"op234uh",
                     "dossier_marque_vehicule":"Renault",
                     "dossier_model_vehicule":"Capture",
                     "departement":971,
-                    //"redirection_finale":"http://www.xxxxx.com"//url de redirection après traitement final du formulaire, doit être sur le même domaine que le domaine de la page qui contient l'iframe
+                    "redirection_finale":"http://sdkreprise:8888/toto.php"//url de redirection après traitement final du formulaire, doit être sur le même domaine que le domaine de la page qui contient l'iframe
                 }
             );
         });
+
+
+        // si on possède déjà un id de dossier, il est possible de récupérer un id de session  
+        /*var dossierkey="xxxxxxxxxxxxx";
+        instanceForm.getSessionKey(dossierkey,function(sessionkey)
+        {
+
+                //cet identifiant de session couplé à un identifiant de dossier peut permettre d'afficher la fiche de demande de reprise sur une page ( ou dans un iframe par exemple )
+                //document.location.href=domaine+"/mrep_fiche_dossier/ext/"+sessionkey+"/"+dossierkey;
+
+
+                //cet identifiant de session couplé à un identifiant de dossier peut permettre d'appeler la méthode sendBuyIntent qui permet d'envoyer les informations d'intention d'achat au format texte ( html, txt )
+                //instanceForm.sendBuyIntent
+                //(
+                  //  sessionkey,
+                    //dossierkey,
+                    //"Contenu html ou texte",
+                    //function(retour){console.log(retour);}
+                //);
+        });*/
+
+            
 
 
     });
